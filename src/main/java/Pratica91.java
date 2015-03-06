@@ -10,13 +10,16 @@
  */
 
 public class Pratica91 {
-    public static void main(String[] args) {
-        //System.getProperties().list(System.out);
-        System.out.println(System.getProperty("os.name"));
-        System.out.println(Runtime.getRuntime().availableProcessors() + " processadores");
-        System.out.println(Runtime.getRuntime().totalMemory()/1024 + "MB de memória total");
-        System.out.println(Runtime.getRuntime().freeMemory()/1024 + "MB de memória livre");
-        System.out.println(Runtime.getRuntime().maxMemory()/1024 + "MB de memória da máquina virtual");
-    
-    }
-}    
+   public static void main(String[] args){
+        System.out.println("Sistema Operacional: "
+            + System.getProperty("os.name"));
+        System.out.println("Número de processadores: " 
+            + Runtime.getRuntime().availableProcessors());
+        System.out.println("Memória total: "
+            + String.format("%.2f",Runtime.getRuntime().totalMemory()/(1048576.0)) + " MB");
+        System.out.println("Memória livre: "
+            + String.format("%.2f",Runtime.getRuntime().freeMemory()/(1048576.0)) + " MB");
+        System.out.println("Máxima memória usada: "
+            + String.format("%.2f", Runtime.getRuntime().maxMemory()/(1048576.0)) + " MB");
+}
+}
